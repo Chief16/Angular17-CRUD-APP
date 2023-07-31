@@ -26,4 +26,8 @@ export class DataService {
   deleteItem(itemId: number) {
     return this.http.delete(`${this.apiUrl}/posts/${itemId}`);
   }
+
+  getEmpDetails(){
+    return this.http.get('http://localhost:3000/empDetails')
+  }
 }

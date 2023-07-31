@@ -1,0 +1,30 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "name": "John Doe"
+        },
+        {
+            "id": 2,
+            "name": "Jane Smith"
+        }
+    ], 
+
+    "empDetails": [
+        {
+            "name": "bittu",
+            "city": "blr",
+            "company": "tcs"
+        }, 
+        {
+            "name": "roshan",
+            "city": "bom",
+            "company": "infy"
+        },
+        {
+            "name": "venu",
+            "city": "amd",
+            "company": "wipro"
+        }
+    ]
+}
