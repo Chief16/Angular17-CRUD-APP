@@ -30,4 +30,8 @@ export class DataService {
   getEmpDetails(){
     return this.http.get('http://localhost:3000/empDetails')
   }
+
+  deleteEmp(id:number){
+    return this.http.delete('http://localhost:3000/empDetails' + "/"+  id)
+  }
 }

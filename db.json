@@ -1,30 +1,32 @@
 {
-    "users": [
-        {
-            "id": 1,
-            "name": "John Doe"
-        },
-        {
-            "id": 2,
-            "name": "Jane Smith"
-        }
-    ], 
-
-    "empDetails": [
-        {
-            "name": "bittu",
-            "city": "blr",
-            "company": "tcs"
-        }, 
-        {
-            "name": "roshan",
-            "city": "bom",
-            "company": "infy"
-        },
-        {
-            "name": "venu",
-            "city": "amd",
-            "company": "wipro"
-        }
-    ]
+  "users": [
+    {
+      "id": 1,
+      "name": "John Doe"
+    },
+    {
+      "id": 2,
+      "name": "Jane Smith"
+    }
+  ],
+  "empDetails": [
+    {
+      "id": 2,
+      "name": "roshan",
+      "city": "bom",
+      "company": "infy"
+    },
+    {
+      "id": 4,
+      "name": "bittu",
+      "city": "blr",
+      "company": "tcs"
+    },
+    {
+      "id": 6,
+      "name": "venu",
+      "city": "amd",
+      "company": "wipro"
+    }
+  ]
 }

@@ -12,6 +12,11 @@ import { DataService } from './data.service';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatTableModule} from '@angular/material/table';
+import {MatIconModule} from '@angular/material/icon';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatButtonModule} from '@angular/material/button';
+import { DeleteDialogComponent } from './dialogs/delete-dialog/delete-dialog.component';
+import {MatDialogModule} from '@angular/material/dialog';
 
 
 @NgModule({
@@ -20,7 +25,8 @@ import {MatTableModule} from '@angular/material/table';
     CreateComponent,
     ReadComponent,
     UpdateComponent,
-    DeleteComponent
+    DeleteComponent,
+    DeleteDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +35,11 @@ import {MatTableModule} from '@angular/material/table';
     HttpClientModule,
     FormsModule,
     BrowserAnimationsModule,
-    MatTableModule
+    MatTableModule,
+    MatIconModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatDialogModule
     ],
   providers: [DataService],
   bootstrap: [AppComponent]
