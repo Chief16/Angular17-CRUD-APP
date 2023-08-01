@@ -17,6 +17,9 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
 import { DeleteDialogComponent } from './dialogs/delete-dialog/delete-dialog.component';
 import {MatDialogModule} from '@angular/material/dialog';
+import { UserFormDialogComponent } from './dialogs/user-form-dialog/user-form-dialog.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
 
 
 @NgModule({
@@ -26,7 +29,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     ReadComponent,
     UpdateComponent,
     DeleteComponent,
-    DeleteDialogComponent
+    DeleteDialogComponent,
+    UserFormDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +43,9 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatIconModule,
     MatToolbarModule,
     MatButtonModule,
-    MatDialogModule
+    MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule
     ],
   providers: [DataService],
   bootstrap: [AppComponent]

@@ -1,0 +1,28 @@
+<div class="form-container">
+    <h2 mat-dialog-title>Angular material dialog prompt</h2>
+    <mat-dialog-content>
+        <form [formGroup]="userForm">
+        <mat-form-field>
+            <mat-label>Name</mat-label>
+            <input matInput formControlName="name">
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>City</mat-label>
+            <input matInput formControlName="city">
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Company</mat-label>
+            <input matInput formControlName="company">
+          </mat-form-field>
+          </form>
+    </mat-dialog-content>
+    <mat-dialog-actions>
+      <button mat-raised-button (click)="cancel()" color="primary">
+        Close
+      </button>
+      <button type="submit" mat-raised-button color="primary" (click)="submit(userForm)">
+        Submit
+      </button>
+    </mat-dialog-actions>
+  </div>
+  
