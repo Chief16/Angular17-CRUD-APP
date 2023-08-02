@@ -30,17 +30,23 @@ export class AppComponent implements OnInit {
   displayedColumns: string[] = ['name', 'city', 'company', 'edit', 'delete'];
 
   ngOnInit(){
-    this.data.getEmpDetails().subscribe((data:any)=>{
-      this.dataSource= new MatTableDataSource<any>(data)
-    })
+   this.getEmpDetails();
   }
 
+  getEmpDetails(){
+    this.data.getEmpDetails().subscribe((dd:any)=>{
+      this.dataSource= new MatTableDataSource<any>(dd)
+    })
+  }
 
   redirectToAdd(){
     console.log("add user dialog opened");
     const dialogRef = this.dialog.open(UserFormDialogComponent, {
       width: '350px',
       height: '400px',
+      data: {
+        editDialog: false
+      }
     });
     
     dialogRef.afterClosed().subscribe((data) => {
@@ -50,9 +56,7 @@ export class AppComponent implements OnInit {
         console.log("input form data", data.userData.value)
         this.data.addEmpDetails(data.userData.value).subscribe((data)=>{
           console.log("user added successfully")
-          this.data.getEmpDetails().subscribe((dd:any)=>{
-            this.dataSource= new MatTableDataSource<any>(dd)
-          })
+         this.getEmpDetails();
         })
       }
     });
@@ -60,6 +64,26 @@ export class AppComponent implements OnInit {
 
   redirectToEdit(inp:any){
     console.log(inp)
+    const dialogRef = this.dialog.open(UserFormDialogComponent, {
+      width: '350px',
+      height: '400px',
+      data: {
+        editDialog: true,
+        userId: inp
+      }
+    });
+
+    dialogRef.afterClosed().subscribe((data) => {
+      console.log(data)
+      if (data.clicked === 'submit') {
+        console.log('Sumbit button clicked');
+        console.log("input form data", data.userData.value)
+        this.data.editUserDetails(inp, data.userData.value).subscribe((data)=>{
+          console.log("user updated successfully")
+          this.getEmpDetails();
+        })
+      }
+    });
   }
 
   redirectToDelete(inp:any){
@@ -67,7 +91,7 @@ export class AppComponent implements OnInit {
     const ref: MatDialogRef<DeleteDialogComponent> = this.dialog.open(
       DeleteDialogComponent,
       {
-        width: '600px',
+        width: '400px',
         height: '210px',
         data: {
           message: 'Are you sure you want to delete user?',

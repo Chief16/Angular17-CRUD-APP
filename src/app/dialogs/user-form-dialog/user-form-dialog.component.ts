@@ -1,6 +1,7 @@
 import { Component, Inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { DataService } from 'src/app/data.service';
 
 @Component({
   selector: 'app-user-form-dialog',
@@ -9,20 +10,46 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 })
 export class UserFormDialogComponent {
 
-  userForm: FormGroup;
+  addUserForm: FormGroup;
+  editUserForm: FormGroup;
   message = '';
+  editDialog= false;
+  userId=0;
 
-  constructor(private fb: FormBuilder,
+  constructor(private fb: FormBuilder, private dataService: DataService,
     private dialogRef: MatDialogRef<UserFormDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) data: { message: string }
+    @Inject(MAT_DIALOG_DATA) data: { message: string, editDialog: boolean,userId: number }
   ) {
     this.message = data ? data.message : '';
+    this.editDialog= data.editDialog;
+    this.userId= data.userId
 
-    this.userForm = this.fb.group({
+    this.addUserForm = this.fb.group({
       name: ['', Validators.required],
       city: ['', Validators.required],
       company: ['', Validators.required],
     });
+
+    this.editUserForm= this.fb.group({
+      name: [''],
+      city:[''],
+      company: ['']
+    })
+
+    this.getUserDataForEdit();
+    
+
+  }
+
+  getUserDataForEdit(){
+    this.dataService.getEmpDetails().subscribe((allUserData:any)=>{
+      console.log("id: ", this.userId)
+      allUserData.filter((data:any)=>{
+        if(data.id===this.userId){
+            this.editUserForm.patchValue(data);
+        }
+    })
+    })
   }
 
   submit(form: FormGroup) {

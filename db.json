@@ -11,34 +11,16 @@
   ],
   "empDetails": [
     {
-      "id": 2,
-      "name": "roshan",
-      "city": "bom",
-      "company": "infy"
-    },
-    {
-      "id": 4,
       "name": "bittu",
       "city": "blr",
-      "company": "tcs"
+      "company": "wipro",
+      "id": 4
     },
     {
-      "id": 6,
-      "name": "venu",
-      "city": "amd",
-      "company": "wipro"
-    },
-    {
-      "name": "bittttu",
-      "city": "nbn",
-      "company": "cpg",
+      "name": "bittu",
+      "city": "banglore",
+      "company": "tcs",
       "id": 7
-    },
-    {
-      "name": "test",
-      "city": "test",
-      "company": "test",
-      "id": 8
     }
   ]
 }

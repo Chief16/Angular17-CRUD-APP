@@ -43,4 +43,8 @@ export class DataService {
     };
     return this.http.post('http://localhost:3000/empDetails', details, options)
   }
+
+  editUserDetails(id: any, user: any){
+    return this.http.put('http://localhost:3000/empDetails' + "/" + id, user)
+  }
 }
