@@ -7,32 +7,34 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class DataService {
 
-  private apiUrl = 'https://jsonplaceholder.typicode.com';
+  private fakeApiUrl = 'https://jsonplaceholder.typicode.com';
+  private jsonServerUrl = 'http://localhost:3000';
+
 
   constructor(private http: HttpClient) {}
 
   getItems() {
-    return this.http.get(`${this.apiUrl}/posts`);
+    return this.http.get(`${this.fakeApiUrl}/posts`);
   }
 
   createItem(item: any) {
-    return this.http.post(`${this.apiUrl}/posts`, item);
+    return this.http.post(`${this.fakeApiUrl}/posts`, item);
   }
 
   updateItem(item: any) {
-    return this.http.put(`${this.apiUrl}/posts/${item.id}`, item);
+    return this.http.put(`${this.fakeApiUrl}/posts`+ '/' + item.id, item);
   }
 
   deleteItem(itemId: number) {
-    return this.http.delete(`${this.apiUrl}/posts/${itemId}`);
+    return this.http.delete(`${this.fakeApiUrl}/posts/${itemId}`);
   }
 
   getEmpDetails(){
-    return this.http.get('http://localhost:3000/empDetails')
+    return this.http.get(`${this.jsonServerUrl}/empDetails`)
   }
 
   deleteEmp(id:number){
-    return this.http.delete('http://localhost:3000/empDetails' + "/"+  id)
+    return this.http.delete(`${this.jsonServerUrl}/empDetails` + "/"+  id)
   }
 
   addEmpDetails(details: any){
@@ -41,10 +43,10 @@ export class DataService {
     let options={
       headers:httpheaders
     };
-    return this.http.post('http://localhost:3000/empDetails', details, options)
+    return this.http.post(`${this.jsonServerUrl}/empDetails`, details, options)
   }
 
   editUserDetails(id: any, user: any){
-    return this.http.put('http://localhost:3000/empDetails' + "/" + id, user)
+    return this.http.put(`${this.jsonServerUrl}/empDetails` + "/" + id, user)
   }
 }
