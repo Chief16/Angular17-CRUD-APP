@@ -1,9 +1,0 @@
-<h2>Update Item</h2>
-<form [formGroup]="updateForm" (ngSubmit)="onUpdate()">
-  <select formControlName="id">
-    <option *ngFor="let item of items" [value]="item.id">{{ item.title }}</option>
-  </select>
-  <input type="text" formControlName="title" placeholder="Enter new title">
-  <input type="text" formControlName="body" placeholder="Enter new body">
-  <button type="submit" [disabled]="updateForm.invalid">Update</button>
-</form>
