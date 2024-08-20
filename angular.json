@@ -65,10 +65,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "crud-app-angular:build:production"
+              "buildTarget": "crud-app-angular:build:production"
             },
             "development": {
-              "browserTarget": "crud-app-angular:build:development"
+              "buildTarget": "crud-app-angular:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -76,7 +76,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "crud-app-angular:build"
+            "buildTarget": "crud-app-angular:build"
           }
         },
         "test": {
