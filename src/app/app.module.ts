@@ -16,13 +16,23 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { UserFormDialogComponent } from './dialogs/user-form-dialog/user-form-dialog.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
+import { TableComponent } from './components/table/table.component';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatListModule} from '@angular/material/list';
+import { HomeComponent } from './components/home/home.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { TopNavComponent } from './components/top-nav/top-nav.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     DeleteDialogComponent,
-    UserFormDialogComponent
+    UserFormDialogComponent,
+    TableComponent,
+    HomeComponent,
+    FooterComponent,
+    TopNavComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +47,9 @@ import {MatInputModule} from '@angular/material/input';
     MatButtonModule,
     MatDialogModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatSidenavModule,
+    MatListModule
     ],
   providers: [DataService],
   bootstrap: [AppComponent]
