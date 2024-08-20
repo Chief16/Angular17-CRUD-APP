@@ -22,6 +22,7 @@ import {MatListModule} from '@angular/material/list';
 import { HomeComponent } from './components/home/home.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { TopNavComponent } from './components/top-nav/top-nav.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { TopNavComponent } from './components/top-nav/top-nav.component';
     TableComponent,
     HomeComponent,
     FooterComponent,
-    TopNavComponent
+    TopNavComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
