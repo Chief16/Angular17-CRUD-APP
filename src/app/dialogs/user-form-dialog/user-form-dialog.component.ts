@@ -1,12 +1,18 @@
 import { Component, Inject } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
+import { MAT_DIALOG_DATA, MatDialogRef, MatDialogModule } from '@angular/material/dialog';
 import { DataService } from 'src/app/data.service';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { NgIf } from '@angular/common';
 
 @Component({
-  selector: 'app-user-form-dialog',
-  templateUrl: './user-form-dialog.component.html',
-  styleUrls: ['./user-form-dialog.component.css']
+    selector: 'app-user-form-dialog',
+    templateUrl: './user-form-dialog.component.html',
+    styleUrls: ['./user-form-dialog.component.css'],
+    standalone: true,
+    imports: [NgIf, MatDialogModule, ReactiveFormsModule, MatFormFieldModule, MatInputModule, MatButtonModule]
 })
 export class UserFormDialogComponent {
 
