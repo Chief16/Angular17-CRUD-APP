@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import {BreakpointObserver, Breakpoints} from '@angular/cdk/layout';
+import { MatSidenav } from '@angular/material/sidenav';
 
 
 
@@ -18,6 +19,7 @@ export class AppComponent implements OnInit {
   title = 'crud-app-angular';
   isMobile: boolean = false;
   isSideNavOpened= true;
+  @ViewChild('sidenav') sidenav!: MatSidenav;
 
   constructor(private breakpointObserver: BreakpointObserver) {
     this.isMobile = this.breakpointObserver.isMatched(Breakpoints.Handset);

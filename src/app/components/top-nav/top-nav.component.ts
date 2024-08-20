@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-top-nav',
@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class TopNavComponent {
 
+  @Output() sidenavToggle = new EventEmitter<void>();
+
+  toggleSidenav() {
+    this.sidenavToggle.emit();
+  }
 }
